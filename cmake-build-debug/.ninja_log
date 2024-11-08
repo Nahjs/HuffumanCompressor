@@ -1,0 +1,17 @@
+# ninja log v6
+29	340	7526894936831543	MyProjectName_autogen/timestamp	264d9ef48b5924fe
+1796	1836	7526752646435272	ui_mainwindow.h	b25f1511ad647aa
+1884	5818	7526752646971801	CMakeFiles/MyProjectName.dir/main.cpp.obj	c8f160876fb6e653
+1870	4957	7526752646836452	CMakeFiles/MyProjectName.dir/hufBase.cpp.obj	3c36b8bf1c07da00
+29	340	7526894936831543	MyProjectName_autogen/mocs_compilation.cpp	264d9ef48b5924fe
+1861	5300	7526752646746214	CMakeFiles/MyProjectName.dir/hufDecode.cpp.obj	c093b369352208b0
+6690	7232	7526752695035486	MyProjectName.exe	10a0ab0a33275312
+29	340	7526894936831543	D:/CLion/HUFCompressor/cmake-build-debug/MyProjectName_autogen/timestamp	264d9ef48b5924fe
+29	340	7526894936831543	D:/CLion/HUFCompressor/cmake-build-debug/MyProjectName_autogen/mocs_compilation.cpp	264d9ef48b5924fe
+1796	1836	7526752646435272	D:/CLion/HUFCompressor/cmake-build-debug/ui_mainwindow.h	b25f1511ad647aa
+1853	5556	7526752646666004	CMakeFiles/MyProjectName.dir/hufEncode.cpp.obj	503a079d0b127975
+1844	5636	7526752646573980	CMakeFiles/MyProjectName.dir/filetree.cpp.obj	42322a05a6fd0888
+1836	6007	7526752646495949	CMakeFiles/MyProjectName.dir/MyProjectName_autogen/mocs_compilation.cpp.obj	526593f3aa0beea1
+1898	6690	7526752647115046	CMakeFiles/MyProjectName.dir/mainwindow.cpp.obj	55896c6e253d576f
+20	3639	7526895136705757	CMakeFiles/MyProjectName.dir/mainwindow.cpp.obj	55896c6e253d576f
+3640	4225	7526895172901680	MyProjectName.exe	10a0ab0a33275312

@@ -1,0 +1,1 @@
+-I"D:/CLion/HUFCompressor/cmake-build-debug/MyProjectName_autogen/include" -isystem D:/QT/6.5.3/mingw_64/include/QtCore -isystem D:/QT/6.5.3/mingw_64/include -isystem "D:/QT/6.5.3/mingw_64/mkspecs/win32-g++" -isystem D:/QT/6.5.3/mingw_64/include/QtGui -isystem D:/QT/6.5.3/mingw_64/include/QtWidgets

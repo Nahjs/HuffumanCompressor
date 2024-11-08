@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>821</width>
+    <height>633</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>HFU压缩解压</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>image/title.jpg</normaloff>image/title.jpg</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: white;</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QTreeWidget" name="treeWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>30</y>
+      <width>821</width>
+      <height>431</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="selectionMode">
+     <enum>QAbstractItemView::ExtendedSelection</enum>
+    </property>
+    <property name="sortingEnabled">
+     <bool>true</bool>
+    </property>
+    <property name="animated">
+     <bool>true</bool>
+    </property>
+    <property name="headerHidden">
+     <bool>false</bool>
+    </property>
+    <attribute name="headerVisible">
+     <bool>true</bool>
+    </attribute>
+    <attribute name="headerDefaultSectionSize">
+     <number>175</number>
+    </attribute>
+    <column>
+     <property name="text">
+      <string>名称</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>大小</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>路径</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>修改时间</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>属性</string>
+     </property>
+    </column>
+   </widget>
+   <widget class="QCheckBox" name="checkBox_useSeperateKeytoCompress">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>470</y>
+      <width>51</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>分离 Huffman 编码</string>
+    </property>
+    <property name="statusTip">
+     <string>不写入 Huffman 信息到文件中，分离作为密钥文件</string>
+    </property>
+    <property name="text">
+     <string>加密</string>
+    </property>
+   </widget>
+   <widget class="QToolButton" name="toolButton_selectPath">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>490</y>
+      <width>24</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>...</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_pathDisplay">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>560</x>
+      <y>490</y>
+      <width>111</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBox_useKeytoDecompress">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>500</y>
+      <width>51</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>添加 Huffman 树密钥文件</string>
+    </property>
+    <property name="statusTip">
+     <string>添加密钥文件作进行解码</string>
+    </property>
+    <property name="text">
+     <string>解密</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_decompress">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>470</y>
+      <width>101</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>50</width>
+      <height>50</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <family>华文中宋</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string> 解 压</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>C:/Users/lenovo/Desktop/image/decode.png</normaloff>C:/Users/lenovo/Desktop/image/decode.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>50</width>
+      <height>50</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_compress">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>470</y>
+      <width>101</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>50</width>
+      <height>50</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <family>华文中宋</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string>  压 缩</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>C:/Users/lenovo/Desktop/image/encode.png</normaloff>C:/Users/lenovo/Desktop/image/encode.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>50</width>
+      <height>50</height>
+     </size>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="progressBar">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>530</y>
+      <width>781</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+    <property name="textVisible">
+     <bool>true</bool>
+    </property>
+    <property name="textDirection">
+     <enum>QProgressBar::TopToBottom</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="compressionRateLabel">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>470</y>
+      <width>121</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>华文中宋</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>0</y>
+      <width>431</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>8</pointsize>
+      <bold>true</bold>
+      <underline>false</underline>
+     </font>
+    </property>
+    <property name="text">
+     <string>| 添加目录👆 | 添加文件👆 |   删   除 👆  |   压  缩 👆  |   解   压 👆  |</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>821</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_F">
+    <property name="title">
+     <string>文件（F）</string>
+    </property>
+    <addaction name="actFile_addDir"/>
+    <addaction name="actFile_addFile"/>
+    <addaction name="actFile_deleteFileNode"/>
+    <addaction name="separator"/>
+   </widget>
+   <widget class="QMenu" name="menu_V">
+    <property name="title">
+     <string>查看（V）</string>
+    </property>
+    <addaction name="actView_displayName"/>
+    <addaction name="actView_displaySize"/>
+    <addaction name="actView_displayPath"/>
+    <addaction name="actView_displayEditTime"/>
+    <addaction name="actView_displayProperties"/>
+    <addaction name="separator"/>
+   </widget>
+   <widget class="QMenu" name="menu_T">
+    <property name="title">
+     <string>工具(T)</string>
+    </property>
+    <widget class="QMenu" name="menu">
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="title">
+      <string>选项</string>
+     </property>
+     <addaction name="actionUseSeparateKeyToCompress"/>
+     <addaction name="actionUseKeyToDecompress"/>
+    </widget>
+    <addaction name="menu"/>
+    <addaction name="separator"/>
+   </widget>
+   <addaction name="menu_F"/>
+   <addaction name="menu_V"/>
+   <addaction name="menu_T"/>
+  </widget>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>53</width>
+     <height>40</height>
+    </size>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="separator"/>
+   <addaction name="actFile_addDir"/>
+   <addaction name="separator"/>
+   <addaction name="actFile_addFile"/>
+   <addaction name="separator"/>
+   <addaction name="actFile_deleteFileNode"/>
+   <addaction name="separator"/>
+   <addaction name="actionCompress"/>
+   <addaction name="separator"/>
+   <addaction name="actionDecompress"/>
+   <addaction name="separator"/>
+   <addaction name="actionUseSeparateKeyToCompress"/>
+   <addaction name="actionUseKeyToDecompress"/>
+  </widget>
+  <action name="actFile_addDir">
+   <property name="icon">
+    <iconset>
+     <normaloff>C:/Users/lenovo/Desktop/image/directory.jpg</normaloff>C:/Users/lenovo/Desktop/image/directory.jpg</iconset>
+   </property>
+   <property name="text">
+    <string>添加目录</string>
+   </property>
+   <property name="toolTip">
+    <string>添加目录</string>
+   </property>
+   <property name="statusTip">
+    <string>添加目录到视图所选目录下</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="actFile_addFile">
+   <property name="icon">
+    <iconset>
+     <normaloff>C:/Users/lenovo/Desktop/image/file.jpg</normaloff>C:/Users/lenovo/Desktop/image/file.jpg</iconset>
+   </property>
+   <property name="text">
+    <string>添加文件</string>
+   </property>
+   <property name="toolTip">
+    <string>添加文件</string>
+   </property>
+   <property name="statusTip">
+    <string>添加文件到视图所选目录树下</string>
+   </property>
+  </action>
+  <action name="act_Exit">
+   <property name="text">
+    <string>退出</string>
+   </property>
+   <property name="toolTip">
+    <string>退出程序</string>
+   </property>
+   <property name="statusTip">
+    <string>退出程序</string>
+   </property>
+  </action>
+  <action name="actView_displayIcons">
+   <property name="text">
+    <string>图标</string>
+   </property>
+  </action>
+  <action name="actView_displayName">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>名称</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="actView_displaySize">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>大小</string>
+   </property>
+  </action>
+  <action name="actView_displayPath">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>路径</string>
+   </property>
+  </action>
+  <action name="actView_displayEditTime">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>修改时间</string>
+   </property>
+  </action>
+  <action name="actView_displayProperties">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>属性</string>
+   </property>
+  </action>
+  <action name="actTool_about">
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+  <action name="actFile_deleteFileNode">
+   <property name="icon">
+    <iconset>
+     <normaloff>C:/Users/lenovo/Desktop/image/delete.jpg</normaloff>C:/Users/lenovo/Desktop/image/delete.jpg</iconset>
+   </property>
+   <property name="text">
+    <string>删除节点</string>
+   </property>
+  </action>
+  <action name="actionUseSeparateKeyToCompress">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>image/en.png</normaloff>image/en.png</iconset>
+   </property>
+   <property name="text">
+    <string>加密</string>
+   </property>
+   <property name="toolTip">
+    <string>使用独立密钥压缩</string>
+   </property>
+  </action>
+  <action name="actionUseKeyToDecompress">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>image/de.png</normaloff>image/de.png</iconset>
+   </property>
+   <property name="text">
+    <string>解密</string>
+   </property>
+   <property name="toolTip">
+    <string>使用密钥解压</string>
+   </property>
+  </action>
+  <action name="actionCompress">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>C:/Users/lenovo/Desktop/image/encode.png</normaloff>C:/Users/lenovo/Desktop/image/encode.png</iconset>
+   </property>
+   <property name="text">
+    <string>Compress</string>
+   </property>
+   <property name="toolTip">
+    <string>压缩</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::NoRole</enum>
+   </property>
+  </action>
+  <action name="actionDecompress">
+   <property name="icon">
+    <iconset>
+     <normaloff>C:/Users/lenovo/Desktop/image/decode.png</normaloff>C:/Users/lenovo/Desktop/image/decode.png</iconset>
+   </property>
+   <property name="text">
+    <string>Decompress</string>
+   </property>
+   <property name="toolTip">
+    <string>解压</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::NoRole</enum>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
